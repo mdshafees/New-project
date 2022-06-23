@@ -1,0 +1,52 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+.scene{
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    background: #01070a;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.scene .rocket{
+    position: relative;
+    animation: animate 0.2s ease infinite;
+}
+@keyframes animate{
+    0%, 100%{
+        transform: translateY(-1px);
+    }
+    50%{
+        transform: translateY(1px);
+    }
+}
+.scene .rocket::before{
+    content: "";
+    position: absolute;
+    bottom: -200px;
+    left: 37%;
+    width: 10px;
+    height: 200px;
+    transform: translateX(50%);
+    background: linear-gradient(#00d0ff, transparent);
+}
+.scene i {
+    position: absolute;
+    top: -250px;
+    background: white;
+    animation: animatespace linear infinite;
+}
+
+@keyframes animatespace {
+    0%{
+        transform: translateY(0);
+    }
+    100% {
+        transform: translateY(200vh);
+    }
+}
